@@ -10,7 +10,7 @@ This is my second attempt at making a Sokoban Solver with Python.
 
 Usage :
 
-First, make a file containing the levels in a text editor, like 4Box file. The format is like this:
+First, make a file containing the levels in a text editor, like Samplelevels.txt file. The format is like this:
 
 ; Levelname
 
@@ -29,4 +29,4 @@ Type in the terminal
 
 For instance,
 
->> pypy test.py 4Box 4BoxOut
+>> pypy test.py Samplelevels.txt SampleOut.txt
