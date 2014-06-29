@@ -19,7 +19,7 @@ level
 
 and so on. Make sure you end with ;.
 
-To solve the levels, there are two options - to use A* (Not really should I say) or DFS.
+To solve the levels, there are two options - to use A* (which have a bad heuristic function) or DFS.
 To use A*, type in the terminal
 pypy test.py [levelmap] [levelOutput]
 
