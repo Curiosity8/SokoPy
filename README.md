@@ -20,8 +20,9 @@ level
 and so on. Make sure you end with ;.
 
 To solve the levels, type in the terminal
->> pypy test.py [levels] [levelOutput]
+pypy test.py [levels] [levelOutput]
 
 For instance,
->> pypy test.py Samplelevels.txt SampleOut.txt
-[The last level takes around 2GB memory, and takes quite some time for it to solve]
+pypy test.py Samplelevels.txt SampleOut.txt
+
+(The last level takes around 2GB memory, and takes quite some time for it to solve)
