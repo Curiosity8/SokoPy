@@ -19,10 +19,14 @@ level
 
 and so on. Make sure you end with ;.
 
-To solve the levels, type in the terminal
-pypy test.py [levels] [levelOutput]
+To solve the levels, there are two options - to use A* (Not really should I say) or DFS.
+To use A*, type in the terminal
+pypy test.py [levelmap] [levelOutput]
 
 For instance,
 pypy test.py Samplelevels.txt SampleOut.txt
 
 (The last level takes around 2GB memory, and takes quite some time for it to solve)
+
+If you want to solve via DFS, type 
+pypy test.py [levelmap] [levelOutput] DFS
