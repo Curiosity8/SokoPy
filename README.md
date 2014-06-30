@@ -13,8 +13,11 @@ Usage :
 First, make a file containing the levels in a text editor, like Samplelevels.txt file. The format is like this:
 
 ; Levelname
+
 level
+
 ; levelname
+
 level
 
 and so on. Make sure you end with ;.
