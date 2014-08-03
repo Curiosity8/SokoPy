@@ -33,3 +33,19 @@ pypy test.py Samplelevels.txt SampleOut.txt
 
 If you want to solve via DFS, type 
 pypy test.py [levelmap] [levelOutput] DFS
+
+
+
+
+P.S) Level format:
+I urge you to look at the Sokoban wiki.
+http://www.sokobano.de/wiki/index.php?title=Level_format
+
+# : wall
+@ : Man
+$ : Box
+. : Target square
+* : Box on target square
++ : Man on target square
+Empty space : Empty square
+
