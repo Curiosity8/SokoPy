@@ -8,4 +8,4 @@ Now it works really well - giving a huge improvement!
 Things to do:
 1) Add tunnel detection
 2) Correct the freeze deadlock detection, and add other deadlock detection as well.
-
+3) Need to improve the heuristic function - the one I'm using now is too simple!
