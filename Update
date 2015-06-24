@@ -2,7 +2,7 @@ Update 24th June 2015
 
 I found that there is an error in my freeze deadlock detection - so I'm not using it in the updated version.
 I also found zobrist hashing is not working as expected - so I've hashed it the "Python" way. 
-It works really well.
+Now it works really well - giving a huge improvement!
 
 
 Things to do:
