@@ -10,8 +10,6 @@ vector = [[0,1,'r'],
           [-1,0,'u'],
           [1,0,'d']]
 
-
-
 """
 This will be used for direction - the 4 directions to move.
 r = right
@@ -37,8 +35,6 @@ d = down
               
 """
 
-
-
 class Sokoban:
     def __init__(self, board, pushes, steps, prev):
         # About the parameters:
@@ -58,7 +54,8 @@ class Sokoban:
         # Actually self.x and self.y are not needed.
         # Anyhow, we initialize the last three variables beforehand...
 
-
+    def __hash__(self):
+        return hash(tuple(self.board))
         
     def solved(self):
         # Is the level solved?
@@ -72,9 +69,7 @@ class Sokoban:
                     return False
 
         return True
-
-
-    
+   
     def move(self, visited, q):
         # The most boring, yet the most important function.
         # It does what we expect - move in 4 directions, update the board,
@@ -89,10 +84,8 @@ class Sokoban:
 
         # Void return type.
         
-
         pos = position(self.board)
         # This is not necessary.
-
         for direction in vector:
             u = direction[0]
             v = direction[1]
@@ -108,7 +101,6 @@ class Sokoban:
                 Case 1: We push the box:
 
                 ' ' means empty square.
-
                 
                          MOVE it
                 @ *  .    ---->   ' ' + *
@@ -161,10 +153,7 @@ class Sokoban:
                                 #     @ * ' '  --->  ' ' + $
                                 newboard[new2X] = put(newboard[new2X], new2Y, '$')
 
-                            h = gethash(newboard)
-
-
-
+                            h = hash(tuple(newboard))
                             if h not in visited:
 
                                 visited.add(h)
@@ -186,7 +175,7 @@ class Sokoban:
                                 #      + * ' '   ->  . + $
                                 newboard[new2X] = put(newboard[new2X], new2Y, '$')
 
-                            h = gethash(newboard)
+                            h = hash(tuple(newboard))
 
                             if h not in visited:
                                 visited.add(h)
@@ -195,9 +184,6 @@ class Sokoban:
                                 current.x = newX
                                 current.y = newY
                                 heapq.heappush(q, current)
-
-
-                                
                                 
                 if self.board[newX][newY] == '$':
                     newboard = self.board[:]
@@ -220,7 +206,7 @@ class Sokoban:
                             else:
                                 newboard[new2X] = put(newboard[new2X], new2Y, '$')
 
-                            h = gethash(newboard)
+                            h = hash(tuple(newboard))
     
                             if h not in visited:
                                 visited.add(h)
@@ -241,7 +227,7 @@ class Sokoban:
                             else:
                                 newboard[new2X] = put(newboard[new2X], new2Y, '$')
 
-                            h = gethash(newboard)
+                            h = hash(tuple(newboard))
 
 
                             if h not in visited:
@@ -266,7 +252,7 @@ class Sokoban:
                         newboard[newX] = put(newboard[newX], newY, '@')
                         newboard[self.x] = newboard[self.x].replace('+','.')
 
-                        h = gethash(newboard)
+                        h = hash(tuple(newboard))
                         
                         if h not in visited:
                             visited.add(h)
@@ -282,7 +268,7 @@ class Sokoban:
                         newboard[self.x] = newboard[self.x].replace('@',' ')
                         newboard[newX] = put(newboard[newX], newY, '@')
 
-                        h = gethash(newboard)
+                        h = hash(tuple(newboard))
                         
                         if h not in visited:
                             visited.add(h)
@@ -301,7 +287,7 @@ class Sokoban:
                         newboard[self.x] = newboard[self.x].replace('+','.')
                         newboard[newX] = put(newboard[newX], newY, '+')
 
-                        h = gethash(newboard)
+                        h = hash(tuple(newboard))
                     
                         if h not in visited:
                             visited.add(h)
@@ -316,7 +302,7 @@ class Sokoban:
                         newboard[self.x] = newboard[self.x].replace('@',' ')
                         newboard[newX] = put(newboard[newX], newY, '+')
 
-                        h = gethash(newboard)
+                        h = hash(tuple(newboard))
                         if h not in visited:
                             visited.add(h)
                             current = Sokoban(newboard, self.pushes, self.steps + 1, self)
@@ -341,6 +327,16 @@ class Sokoban:
         return 0
 
 
-
 def f(sokoban):
     return 0.5*sokoban.pushes + sokoban.steps
+
+
+
+
+four = ['########',
+        '#      #',
+        '# .**$@#',
+        '#      #',
+        '#####  #',
+        '    ####']
+
