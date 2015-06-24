@@ -9,10 +9,6 @@ from zobrist import *
 #from deadlockTable import *
 from FreezeDeadlock import *
 
-
-
-
-
 def solve(board):
     pos = position(board)
 
@@ -33,7 +29,6 @@ def solve(board):
     visited2, boxpos = calc(board)
     # visited2 is a set that will be used for simple deadlock detection. 
     # See deadlock.py for more details.
-
     
     path = ''
     while len(q) != 0:
@@ -54,18 +49,16 @@ def solve(board):
             #print asizeof(q)
             return s, len(visited)
 
-
         if easy(top.board) == True:
             continue
 
         if simpleDead(top, visited2) == True:
             continue
-
         
         top.move(visited, q)
 
-        if freezeDead(top.board, visited2) == True:
-            continue
+        #if freezeDead(top.board, visited2) == True:
+        #    continue
 
         
     print len(visited)
