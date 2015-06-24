@@ -1,0 +1,10 @@
+Update 24th June 2015
+
+I found that my freeze deadlock detection is not working as expected, so I've commented that portion out when solving.
+I also found that zobrist hashing is not working as expected - so I hashed it the "Python" way.
+
+As you can see - there's not much change; but its giving me a great improvement.
+
+Things to add:
+1) Add tunnels
+2) I need to correct my Freeze Deadlock module. And also add other types of deadlock detections....
