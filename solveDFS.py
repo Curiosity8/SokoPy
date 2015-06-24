@@ -6,13 +6,13 @@ from position import *
 import sys
 from deadlocks import *
 #from pympler.asizeof import *
-from zobrist import *
-from FreezeDeadlock import *
+#from zobrist import *
+#from FreezeDeadlock import *
 
 def solveDFS(board):
     pos = position(board)
 
-    init_hash(board)
+    #init_hash(board)
     
     start = SokobanDFS(board, None)
     start.x = pos['S'][0]
@@ -23,7 +23,7 @@ def solveDFS(board):
 
     visited = set()
 
-    visited.add(gethash(board))
+    #visited.add(gethash(board))
     #visited.add(tuple(board))
 
     visited2, boxpos = calc(board)
@@ -63,8 +63,8 @@ def solveDFS(board):
 
         top.move(visited, q)
 
-        if freezeDead(top.board, visited2) == True:
-            continue
+        #if freezeDead(top.board, visited2) == True:
+        #    continue
      
 
     return -1
