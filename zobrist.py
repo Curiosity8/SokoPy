@@ -1,4 +1,5 @@
 # Implements Zobrist Hashing.
+# Update: Not using it now.
 
 import random
 
